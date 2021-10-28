@@ -2,6 +2,7 @@ const fs = require('fs');
 
 const requestHandler = (req, res) => {
     const { url, method } = req;
+    if (!url) return;
     if (url === '/') {
         res.write(`
                 <!DOCTYPE html>
@@ -38,14 +39,17 @@ const requestHandler = (req, res) => {
                 return res.end();
             });
         });
+    } else if (url === '/test') {
+        res.setHeader('Content-Type', 'text/html');
+        res.write('<html>');
+        res.write('<head><title>My First Page</title></head>');
+        res.write('<body><h1>Hello from nodejs.</h1></body>');
+        res.write('<html>');
+        res.end();
+    } else {
+        res.statusCode = 404;
+        res.end();
     }
-
-    res.setHeader('Content-Type', 'text/html');
-    res.write('<html>');
-    res.write('<head><title>My First Page</title></head>');
-    res.write('<body><h1>Hello from nodejs.</h1></body>');
-    res.write('<html>');
-    res.end();
 };
 
 module.exports = requestHandler;
