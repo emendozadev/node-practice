@@ -1,0 +1,53 @@
+:root {
+    /* CSS HEX */
+    --wild-blue-yonder: #95a8cdff;
+    --lavender-web: #dce7fdff;
+    --wild-blue-yonder-2: #9db5e6ff;
+    --glaucous: #4f7edbff;
+    --y-in-mn-blue: #2851a1ff;
+
+    --little-boy-blue: #82a1deff;
+    --lavender-web: #dde8feff;
+    --french-sky-blue: #95b3efff;
+    --blue-crayola: #4078e7ff;
+    --cobalt-blue: #1a4badff;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+main {
+    padding: 1rem;
+}
+.main-header {
+    width: 100%;
+    height: 3.5rem;
+    background-color: var(--y-in-mn-blue);
+    padding: 0 1.5rem;
+}
+.main-header__nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.main-header__item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.main-header__item {
+    margin: 0 1rem;
+    padding: 0;
+}
+.main-header__item a {
+    text-decoration: none;
+    color: var(--wild-blue-yonder-2);
+}
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active {
+    color: var(--lavender-web);
+}
