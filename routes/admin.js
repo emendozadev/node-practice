@@ -5,7 +5,13 @@ const product = require('../data/product');
 const rootDir = require('../util/path');
 
 router.get('/add-product', (req, res, next) => {
-    res.render('add-product', { pageTitle: 'Add Product', path: req.originalUrl });
+    res.render('add-product', {
+        pageTitle: 'Add Product',
+        path: req.originalUrl,
+        activeAddProduct: true,
+        formCss: true,
+        productCss: true,
+    });
 });
 
 router.post('/add-product', (req, res, next) => {
